@@ -228,7 +228,7 @@ export default {
       }
 
       if (this.ignoredCountries.length) {
-        return allCountries.filter(({ iso2 }) => 
+        return allCountries.filter(({ iso2 }) =>
           !this.ignoredCountries.includes(iso2.toUpperCase()) &&
           !this.ignoredCountries.includes(iso2.toLowerCase()))
       }
@@ -311,6 +311,8 @@ export default {
       if (!this.disabledFetchingCountry) {
         getCountry().then((res) => {
           this.activeCountry = this.findCountry(res) || this.activeCountry;
+          this.phone = this.activeCountry.dialCode ? `+${this.activeCountry.dialCode}` : '';
+
         });
       }
     },
@@ -337,6 +339,7 @@ export default {
     },
     choose(country) {
       this.activeCountry = country;
+      this.phone = `+${this.activeCountry.dialCode}`
       this.$emit('onInput', this.response);
     },
     onInput() {
