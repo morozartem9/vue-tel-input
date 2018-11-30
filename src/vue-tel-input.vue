@@ -66,15 +66,8 @@ li.last-preferred {
   align-items: center;
 }
 .vue-tel-input {
-  border-radius: 3px;
   display: flex;
-  border: 1px solid #bbb;
   text-align: left;
-}
-.vue-tel-input:focus-within {
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
-    0 0 8px rgba(102, 175, 233, 0.6);
-  border-color: #66afe9;
 }
 input {
   border: none;
@@ -84,7 +77,7 @@ input {
   padding-left: 7px;
 }
 ul {
-  z-index: 1;
+  z-index: 100000;
   padding: 0;
   margin: 0;
   text-align: left;
